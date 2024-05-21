@@ -1,0 +1,17 @@
+:root {
+  --red: rgb(214, 33, 33);
+  --orange: rgb(242, 176, 53);
+  --green: rgb(33, 152, 33);
+}
+
+.text--red {
+  color: var(--red);
+}
+
+.text--orange {
+  color: var(--orange);
+}
+
+.text--green {
+  color: var(--green);
+}
