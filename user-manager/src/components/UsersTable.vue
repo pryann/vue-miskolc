@@ -2,10 +2,8 @@
 import { useUserStore } from '@/store/user'
 import EditUserModal from './EditUserModal.vue'
 import 'bootstrap/js/dist/modal'
-import { ref } from 'vue'
 
-const { users, removeUser } = useUserStore()
-const selectedUser = ref(null)
+const { users, removeUser, selectUser } = useUserStore()
 
 async function handleDeleteClick(id) {
   try {
@@ -14,10 +12,6 @@ async function handleDeleteClick(id) {
   } catch (error) {
     console.log('ERROR: Can not remove user')
   }
-}
-
-function handleSelectUser(user) {
-  selectedUser.value = user
 }
 </script>
 
@@ -41,7 +35,7 @@ function handleSelectUser(user) {
             data-bs-toggle="modal"
             data-bs-target="#editUserModal"
             class="btn btn-primary me-2"
-            @click="handleSelectUser(user)"
+            @click="selectUser(user)"
           >
             Edit
           </button>
@@ -50,7 +44,7 @@ function handleSelectUser(user) {
       </tr>
     </tbody>
   </table>
-  <EditUserModal :user="selectedUser" />
+  <EditUserModal />
 </template>
 
 <style scoped></style>

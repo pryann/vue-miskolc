@@ -2,10 +2,19 @@ import { ref } from 'vue'
 import usersApi from '@/api/usersAPI.js'
 
 const users = ref([])
+const selectedUser = ref(null)
 
 export function useUserStore() {
   async function fetchUsers() {
     users.value = await usersApi.getUsers()
+  }
+
+  function getUserById(id) {
+    return users.value.filter((user) => user.id === id)[0] || null
+  }
+
+  function selectUser(user) {
+    selectedUser.value = user
   }
 
   async function removeUser(id) {
@@ -13,9 +22,12 @@ export function useUserStore() {
     users.value = users.value.filter((user) => user.id !== id)
   }
 
-  async function modifyUser(id, updatedUser) {
-    const response = await usersApi.updateUser(id, updatedUser)
-    users.value = users.value.map((user) => (user.id === response.id ? response : user))
+  async function modifyUser() {
+    usersApi.updateUser(selectedUser.value.id, selectedUser.value)
+    users.value = users.value.map((user) =>
+      user.id === selectedUser.value.id ? selectedUser.value : user
+    )
+    selectedUser.value = null
   }
 
   async function addUser(user) {
@@ -25,9 +37,12 @@ export function useUserStore() {
 
   return {
     users,
+    selectedUser,
     fetchUsers,
     removeUser,
     addUser,
-    modifyUser
+    modifyUser,
+    getUserById,
+    selectUser
   }
 }
