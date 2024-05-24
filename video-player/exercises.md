@@ -18,13 +18,13 @@
 
 - Alakítsd át a **UserManager** alkalmazást, hogy a `CreateUserForm` és az `EditUserModal` egy `UserForm` nevű
   komponenst használjanak fel. Ez a komponens tartalmazza a felhasználók módosítására és létrehozására is szolgáló
-  kódot. Így nem kell az űrlapot átmásolni, hanem a teljes űrlap mint egy külön komponens újrafelhasználható lesz.
+  kódot. Így nem kell az űrlapot átmásolni, hanem a teljes űrlap mint egy külön komponens újra felhasználható lesz.
   Használd az elő feladatban létrehozott `InputField` komponenst is
 
 ## 05
 
-- Alakítsd át a **UserManager** alkalmazást, hogy ne _alert_ és _confirm_ ablakokat használj, hanem
-  a `vue-toastification` csomagot
+- Alakítsd át a **UserManager** alkalmazást, hogy ne _confirm_ ablakot használj, hanem
+  a `vue3-promise-dialog` csomagot: [https://github.com/rlemaigre/vue3-promise-dialog?tab=readme-ov-file](https://github.com/rlemaigre/vue3-promise-dialog?tab=readme-ov-file)
 
 ## 06
 
