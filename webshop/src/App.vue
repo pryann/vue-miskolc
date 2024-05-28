@@ -1,15 +1,14 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import MainNavigation from "@/components/MainNavigation.vue";
 </script>
 
 <template>
 
-  <nav>
-    <RouterLink :to="{ name: 'home' }">Home</RouterLink>
-    <RouterLink :to="{ name: 'cart' }">Cart</RouterLink>
-  </nav>
-
-  <RouterView />
+  <div class="container">
+    <MainNavigation />
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>

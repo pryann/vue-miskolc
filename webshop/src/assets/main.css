@@ -1,6 +1,47 @@
-#app {
+:root {
+  --red: #ba0101;
+  --orange: #eab410;
+  --green:#069110;
+  --black: #213547;
+  --white: #fefefe;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--black);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--green);
+}
+
+.container {
+  position: relative;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--orange {
+  color: var(--orange);
+}
+
+.text--red {
+  color: var(--red);
+}
+
+.text--green {
+  color: var(--green);
 }
